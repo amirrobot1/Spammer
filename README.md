@@ -12,7 +12,7 @@
 
 **دستور آماده**
 
-**git clone https://github.com/Datak4G/Spammer && cd Spammer && chmod 777 launch.sh && ./launch.sh**
+**git clone https://github.com/Datak4G/Spammer && cd Spammer && chmod 777 launch.sh && ./launch.sh install && ./launch.sh**
 
 **دستور اسپم برای اسپم دادن ربات :**
 
