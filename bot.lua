@@ -26,7 +26,6 @@ function is_sudo(msg)
       var = true
     end
 	end
-	--@Showeye
   return var
 end
 function vtext(value)
