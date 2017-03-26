@@ -2,7 +2,6 @@ THIS_DIR=$(cd $(dirname $0); pwd)
 cd $THIS_DIR
 TDCLI='https://valtman.name/files/telegram-cli-1222'
 TDCLI_DIR="$THIS_DIR/data"
-Bot_DIR="$THIS_DIR/data"
 LUAROCKS_VER='2.4.2'
 # echo the color
 gray() {
@@ -44,19 +43,19 @@ red   "         |____/   | \   |_|\____/\_____|_/\/\_|"
 #red   "|____/  /    \   |_|    /    \   | \"
 #}
 
-function logo1() {
-green " ████████████  ██████████  ██████████████████ "
-green " █          █  █        █  █                █"
-green " █  ████    █  █  ████  █  ████████  ████████"
-green " █  █  █    █  █  █  █  █         █  █" 
-white " █  ████    █  █  █  █  █         █  █"
-white " █          █  █  █  █  █         █  █" 
-white " █  ██████  █  █  █  █  █         █  █" 
-red   " █  █    █  █  █  █  █  █         █  █"
-red   " █  ██████  █  █  ████  █         █  █" 
-red   " █          █  █        █         █  █"
-red   " ████████████  ██████████         ████"
-}
+#function logo1() {
+#green " ████████████  ██████████  ██████████████████ "
+#green " █          █  █        █  █                █"
+#green " █  ████    █  █  ████  █  ████████  ████████"
+#green " █  █  █    █  █  █  █  █         █  █" 
+#white " █  ████    █  █  █  █  █         █  █"
+#white " █          █  █  █  █  █         █  █" 
+#white " █  ██████  █  █  █  █  █         █  █" 
+#red   " █  █    █  █  █  █  █  █         █  █"
+#red   " █  ██████  █  █  ████  █         █  █" 
+#red   " █          █  █        █         █  █"
+#red   " ████████████  ██████████         ████"
+#}
 
 update() {
   git pull
@@ -238,31 +237,31 @@ EOF
 
 if [ "$1" = "install" ]; then
 logo
-logo1
+#logo1
 install
 luarocks
 #rocks
 telegram-cli
 elif [ "$1" = "update" ]; then
   logo
-  logo1
+  #logo1
   update
   elif [[ "$1" = "upstart" ]]; then
   logo
-  logo1
+  #logo1
   upstart
   elif [[ "$1" = "help" ]]; then
   logo
-  logo1
+  #logo1
   commands
   elif [[ "$1" = "logo" ]]; then
   logo
-  logo1
+  #logo1
   elif [[ "$1" = "on" ]]; then
   logo
-  logo1
+  #logo1
   while true; do
-  screen "$TDCLI_DIR"/telegram-cli -WRs "$Bot_DIR"/bot.lua -c "$TDCLI_DIR"/tgcli.lua -p Tabadolbot "$@"
+  screen "$TDCLI_DIR"/telegram-cli -WRs "$TDCLI_DIR"/bot.lua -c "$TDCLI_DIR"/tgcli.lua -p Tabadolbot "$@"
   done
   elif [[ "$1" = "start" ]]; then
   if [ ! -f ./data/tgcli ]; then
@@ -271,11 +270,11 @@ elif [ "$1" = "update" ]; then
     exit 1
  fi
  logo
- logo1
+ #logo1
   config
-  "$TDCLI_DIR"/tgcli -WRs "$Bot_DIR"/bot.lua -c "$TDCLI_DIR"/tgcli.config -p Tabadolbot "$@"
+  "$TDCLI_DIR"/tgcli -WRs "$TDCLI_DIR"/bot.lua -c "$TDCLI_DIR"/tgcli.config -p Tabadolbot "$@"
   else
   logo
-  logo1
+  #logo1
   commands
 fi
