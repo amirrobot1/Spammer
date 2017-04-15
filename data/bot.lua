@@ -5,7 +5,7 @@ package.cpath = package.cpath .. ';.luarocks/lib/lua/5.2/?.so'
 JSON = require('dkjson')
 serpent = require('serpent')
 sudo_users = {
-[185532812] = 'Mohammad-Reza👉😐👈',
+[240406714] = 'mrunknown',
 }
 
 function dl_cb(arg, data)
